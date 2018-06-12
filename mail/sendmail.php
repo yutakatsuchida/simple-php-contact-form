@@ -4,19 +4,19 @@
 	$errorMessages = array();
 	$msg = "";
 
-	if($_POST["fullname"] == "") {
+	if(empty($_POST["fullname"])) {
 		$errorMessages[] = "Full Name";
 		$errorFlag = true;
 	} 
-	if ($_POST["email"] == "") {
+	if (empty($_POST["email"])) {
 		$errorMessages[] = "Email";
 		$errorFlag = true;
 	}
-	if ($_POST["tel"] == "") {
+	if (empty(["tel"])) {
 		$errorMessages[] = "Telephone Number";
 		$errorFlag = true;
 	}
-	if ($_POST["message"] == "") {
+	if (empty(["message"])) {
 		$errorMessages[] = "Message";
 		$errorFlag = true;
 	}
