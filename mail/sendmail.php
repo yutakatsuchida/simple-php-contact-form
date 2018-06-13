@@ -5,19 +5,27 @@
 	$msg = "";
 
 	if(empty($_POST["fullname"])) {
-		$errorMessages[] = "Full Name";
+		$errorMessages[] = "Full Name is empty";
 		$errorFlag = true;
 	} 
 	if (empty($_POST["email"])) {
-		$errorMessages[] = "Email";
+		$errorMessages[] = "Email is empty";
+		$errorFlag = true;
+	} elseif (!is_email($_POST["email"])) {
+		$errorMessages[] = "Invalid Email Address";
 		$errorFlag = true;
 	}
-	if (empty(["tel"])) {
-		$errorMessages[] = "Telephone Number";
+
+	if (empty($_POST["tel"])) {
+		$errorMessages[] = "Telephone Number is empty";
+		$errorFlag = true;
+	} elseif(!is_telephonenumber($_POST["tel"])) {
+		$errorMessages[] = "Invalid Telephone Number";
 		$errorFlag = true;
 	}
-	if (empty(["message"])) {
-		$errorMessages[] = "Message";
+
+	if (empty($_POST["message"])) {
+		$errorMessages[] = "Message is empty";
 		$errorFlag = true;
 	}
 
