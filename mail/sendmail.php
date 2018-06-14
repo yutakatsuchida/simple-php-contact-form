@@ -37,6 +37,15 @@
 		}
 		$msg .= "</ul>";
 		echo $msg;
+	} else {
+		require_once("config.php");
+		$auto_mail = $_POST["email"];
+		$header = "From: {$auto_from}";
+		if($auto_flag){
+			$auto_body = preg_replace("/\x0D\x0A|\x0D|\x0A/", "\n", $auto_body);
+			mb_send_mail($auto_mail, $auto_subject, $auto_body, $header);
+			echo "An email is sent";
+		}
 	}
 
 ?>
