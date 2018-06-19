@@ -34,19 +34,7 @@
 	// There is no error, send an email
 	if (!$errorFlag) {
 		require_once("config.php");
-		$post_fullname = $_POST["fullname"];
-		$post_email = $_POST["email"];
-		$post_tel = $_POST["tel"];
-		$from = $post_fullname."<".$post_email.">";
-		$header = '';
-		$header .= "Content-Type: text/plain \r\n";
-		$header .= "Return-Path: " . $post_email . " \r\n";
-		$header .= "From: " . $post_email ." \r\n";
-		$header .= "Sender: " . $post_email ." \r\n";
-		$header .= "Reply-To: " . $post_email . " \r\n";
-		$header .= "Organization: " . $post_email . " \r\n";
-		$header .= "X-Sender: " . $post_email . " \r\n";
-		$header .= "X-Priority: 3 \r\n";
+		
 		if (mb_send_mail($to, $subject, $post_massage, $header)) {
 			// if the message is sent
 			print $email_sccess_message;

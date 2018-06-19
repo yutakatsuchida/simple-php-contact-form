@@ -1,7 +1,9 @@
 <?php
-/*
-Configuration for sending an email
-*/
+/*----------------------------------------------
+
+Basic settings for sending an email
+
+----------------------------------------------*/
 
 // Language and Encode settings
 mb_language("English");
@@ -16,18 +18,23 @@ $your_email = "your@emailaddress.com";
 $your_name = "Your Name";
 $your_fullemail = $your_name . "<" . $your_email . ">";
 
-// A confirmation email sent to users automatically
-$auto_flag = true;
-$auto_from_email = $your_email;
-$auto_from_name = $your_name;
+
+
+/*----------------------------------------------
+
+A confirmation email sent to users automatically
+
+----------------------------------------------*/
+
+$auto_flag = true; // Activation for auto-reply function
 $auto_header = '';
 $auto_header .= "Content-Type: text/plain \r\n";
-$auto_header .= "Return-Path: " . $auto_from_email . " \r\n";
-$auto_header .= "From: " . $auto_from_email ." \r\n";
-$auto_header .= "Sender: " . $auto_from_email ." \r\n";
-$auto_header .= "Reply-To: " . $auto_from_email . " \r\n";
-$auto_header .= "Organization: " . $auto_from_name . " \r\n";
-$auto_header .= "X-Sender: " . $auto_from_email . " \r\n";
+$auto_header .= "Return-Path: " . $your_email . " \r\n";
+$auto_header .= "From: " . $your_fullemail ." \r\n";
+$auto_header .= "Sender: " . $your_email ." \r\n";
+$auto_header .= "Reply-To: " . $your_email . " \r\n";
+$auto_header .= "Organization: " . $your_name . " \r\n";
+$auto_header .= "X-Sender: " . $your_email . " \r\n";
 $auto_header .= "X-Priority: 3 \r\n";
 $auto_from = $your_fullemail;
 $auto_subject = "Thank you for your inquiry";
@@ -43,10 +50,27 @@ Support Team
 __EOD__;
 
 
-// A notification email sent to you
+
+/*----------------------------------------------
+
+A notification email sent to you
+
+----------------------------------------------*/
 $to = $your_email;
-//$from = $your_fullemail;
 $subject = "You got an email";
+$post_fullname = $_POST["fullname"];
+$post_email = $_POST["email"];
+$post_tel = $_POST["tel"];
+$from = $post_fullname."<".$post_email.">";
+$header = '';
+$header .= "Content-Type: text/plain \r\n";
+$header .= "Return-Path: " . $post_email . " \r\n";
+$header .= "From: " . $post_email ." \r\n";
+$header .= "Sender: " . $post_email ." \r\n";
+$header .= "Reply-To: " . $post_email . " \r\n";
+$header .= "Organization: " . $post_email . " \r\n";
+$header .= "X-Sender: " . $post_email . " \r\n";
+$header .= "X-Priority: 3 \r\n";
 $post_massage = <<<__EOD__
 You received the following message from your customer.
 
