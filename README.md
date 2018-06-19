@@ -5,11 +5,3 @@ This is my private project, but I always welcome to receive suggestions and inqu
 
 # Absolutely plain PHP code without any frameworks or plug-ins.
 To study how does PHP work in sending emails, I avoided using any useful libraries and plug-ins.
-
-# Structure
--index.php
-
- -mail
-  -config.php 
-  -function.php 
-  -sendmail.php 
