@@ -21,7 +21,7 @@ $your_fullemail = $your_name . "<" . $your_email . ">";
 
 
 /*----------------------------------------------
-
+ 
 A confirmation email sent to users automatically
 
 ----------------------------------------------*/
