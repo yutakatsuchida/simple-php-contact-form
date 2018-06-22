@@ -14,7 +14,7 @@ $email_sccess_message = "Your message has been sent successfully!";
 $email_failed_message = "Failed to send your message. Please contact the webmaster.";
 
 // Your Email information that are used both in auto-send emails and notification emails.
-$your_email = "your@emailaddress.com";
+$your_email = "Your Email";
 $your_name = "Your Name";
 $your_fullemail = $your_name . "<" . $your_email . ">";
 
@@ -32,7 +32,7 @@ $auto_header .= "Content-Type: text/plain \r\n";
 $auto_header .= "Return-Path: " . $your_email . " \r\n";
 $auto_header .= "From: " . $your_fullemail ." \r\n";
 $auto_header .= "Sender: " . $your_email ." \r\n";
-$auto_header .= "Reply-To: " . $your_email . " \r\n";
+$auto_header .= "Reply-To: " . $your_fullemail . " \r\n";
 $auto_header .= "Organization: " . $your_name . " \r\n";
 $auto_header .= "X-Sender: " . $your_email . " \r\n";
 $auto_header .= "X-Priority: 3 \r\n";
@@ -61,13 +61,13 @@ $subject = "You got an email";
 $post_fullname = $_POST["fullname"];
 $post_email = $_POST["email"];
 $post_tel = $_POST["tel"];
-$from = $post_fullname."<".$post_email.">";
+$post_fullemail = $post_fullname."<".$post_email.">";
 $header = '';
 $header .= "Content-Type: text/plain \r\n";
 $header .= "Return-Path: " . $post_email . " \r\n";
-$header .= "From: " . $post_email ." \r\n";
+$header .= "From: " . $post_fullemail ." \r\n";
 $header .= "Sender: " . $post_email ." \r\n";
-$header .= "Reply-To: " . $post_email . " \r\n";
+$header .= "Reply-To: " . $post_fullemail . " \r\n";
 $header .= "Organization: " . $post_email . " \r\n";
 $header .= "X-Sender: " . $post_email . " \r\n";
 $header .= "X-Priority: 3 \r\n";

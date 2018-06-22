@@ -11,7 +11,7 @@ function is_email($value) {
 }
 
 function h($value) {
-	echo htmlspecialchars($value);
+	return htmlspecialchars($value);
 }
 
 ?>
