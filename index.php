@@ -26,6 +26,56 @@
             <label for="tel">Tel</label>
             <input id="tel" class="form-control" type="text" name="tel" value="">
 		</div>
+        <div class="form-group">
+            <label for="province">Province</label>
+            <select class="form-control" id="province" name="province">
+                <option value="">--- Select Your Province ---</option>
+                <option value="Ontario">Ontario</option>
+                <option value="Quebec">Quebec</option>
+                <option value="Nova Scotia">Nova Scotia3</option>
+            </select>
+        </div>
+        <fieldset class="form-group">
+            <legend>Radio buttons</legend>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
+                    Option one is this and that—be sure to include why it's great
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Option two can be something else and selecting it will deselect option one
+                </label>
+            </div>
+            <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+                    Option three is disabled
+                </label>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="checkboxSuccess" name="checkbox[]" value="Checkbox with success">
+                Checkbox with success
+            </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="checkboxWarning" name="checkbox[]" value="Checkbox with warning">
+                Checkbox with warning
+            </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="checkboxDanger" name="checkbox[]" value="Checkbox with danger">
+                Checkbox with danger
+            </label>
+            </div>
+        </div>
         <div class="form-group">	
             <label for="message">Message</label>
             <textarea id="message" class="form-control" name="message" rows="3" cols="3"></textarea>

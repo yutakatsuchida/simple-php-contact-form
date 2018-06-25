@@ -1,35 +1,54 @@
 <?php
+
 	require_once("functions.php");
 	$errorFlag = false;
 	$errorMessages = array();
 	$msg = "";
 
-	if(empty($_POST["fullname"])) {
+	if(empty($_POST["fullname"])):
 		$errorMessages[] = "Full Name is empty";
 		$errorFlag = true;
-	} 
-	if (empty($_POST["email"])) {
+	endif;
+
+	if (empty($_POST["email"])):
 		$errorMessages[] = "Email is empty";
 		$errorFlag = true;
-	} elseif (!is_email($_POST["email"])) {
+	elseif (!is_email($_POST["email"])):
 		$errorMessages[] = "Invalid Email Address";
 		$errorFlag = true;
-	}
+	endif;
 
-	if (empty($_POST["tel"])) {
+	if (empty($_POST["tel"])):
 		$errorMessages[] = "Telephone Number is empty";
 		$errorFlag = true;
-	} elseif(!is_telephonenumber($_POST["tel"])) {
+	elseif(!is_telephonenumber($_POST["tel"])):
 		$errorMessages[] = "Invalid Telephone Number";
 		$errorFlag = true;
-	}
+	endif;
 
-	if (empty($_POST["message"])) {
+	if (empty($_POST["message"])):
 		$errorMessages[] = "Message is empty";
 		$errorFlag = true;
-	}
+	endif;
 
-	
+	if (($_POST["province"]) == ""):
+		$errorMessages[] = "Province is not choosed";
+		$errorFlag = true;
+	endif;
+
+	if (empty($_POST["optionsRadios"])):
+		$errorMessages[] = "optionsRadios is not choosed";
+		$errorFlag = true;
+	endif;
+
+	if (empty($_POST["checkbox"])):
+		$errorMessages[] = "Checkbox is not choosed";
+		$errorFlag = true;
+	endif;
+
+	foreach ($_POST["checkbox"] as $checkbox) {
+		print h($checkbox) . "<br>";
+	}
 
 	// There is no error, send an email
 	if (!$errorFlag) {
