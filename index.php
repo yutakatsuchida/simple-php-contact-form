@@ -56,7 +56,8 @@
                 </label>
             </div>
         </fieldset>
-        <div class="form-group">
+        <fieldset class="form-group">
+            <legend>Checkbox</legend>
             <div class="form-check">
             <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" id="checkboxSuccess" name="checkbox[]" value="Checkbox with success">
@@ -75,7 +76,7 @@
                 Checkbox with danger
             </label>
             </div>
-        </div>
+        </fieldset>
         <div class="form-group">	
             <label for="message">Message</label>
             <textarea id="message" class="form-control" name="message" rows="3" cols="3"></textarea>
